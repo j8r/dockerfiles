@@ -1,12 +1,15 @@
-# CentOS 7 image with systemd enabled
+# CentOS image with systemd enabled
 
 You can use this image as a base container to run systemd services inside.
+
+## Supported tags
+ - `latest`, `7`
 
 ## Usage
 
 Run the container as a daemon
 
-`docker run -d --cap-add SYS_ADMIN -v /sys/fs/cgroup:/sys/fs/cgroup:ro jrei/centos7-systemd`
+`docker run -d --cap-add SYS_ADMIN -v /sys/fs/cgroup:/sys/fs/cgroup:ro jrei/systemd-centos`
 
 Enter to the container
 
