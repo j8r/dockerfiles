@@ -2,9 +2,9 @@ FROM fedora:latest
 
 ENV container docker
 
-RUN dnf -y update && \
-    dnf -y install systemd && \
-    dnf clean all
+RUN dnf -y update \
+    && dnf -y install systemd \
+    && dnf clean all
 
 RUN cd /lib/systemd/system/sysinit.target.wants/; \
     for i in *; do [ $i = systemd-tmpfiles-setup.service ] || rm -f $i; done
