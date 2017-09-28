@@ -14,7 +14,7 @@ RUN apt-get update \
 RUN cd /lib/systemd/system/sysinit.target.wants/ \
     && ls | grep -v systemd-tmpfiles-setup | xargs rm -f $1
 
-RUN rm -f /lib/systemd/system/multi-user.target.wants/*;\
+RUN rm -f /lib/systemd/system/multi-user.target.wants/* \
     /etc/systemd/system/*.wants/* \
     /lib/systemd/system/local-fs.target.wants/* \
     /lib/systemd/system/sockets.target.wants/*udev* \
