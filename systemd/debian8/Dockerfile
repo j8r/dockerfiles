@@ -19,8 +19,6 @@ RUN rm -f /lib/systemd/system/multi-user.target.wants/* \
     /lib/systemd/system/sysinit.target.wants/systemd-tmpfiles-setup* \
     /lib/systemd/system/systemd-update-utmp*
 
-RUN systemctl set-default multi-user.target
-ENV init /lib/systemd/systemd
 VOLUME [ "/sys/fs/cgroup" ]
 
-ENTRYPOINT ["/lib/systemd/systemd"]
+CMD ["/lib/systemd/systemd"]
