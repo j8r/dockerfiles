@@ -13,8 +13,6 @@ RUN rm -f /lib/systemd/system/multi-user.target.wants/* \
     /lib/systemd/system/basic.target.wants/* \
     /lib/systemd/system/anaconda.target.wants/*
 
-RUN systemctl set-default multi-user.target
-ENV init /lib/systemd/systemd
 VOLUME [ "/sys/fs/cgroup" ]
 
-ENTRYPOINT ["/lib/systemd/systemd"]
+CMD ["/usr/sbin/init"] 

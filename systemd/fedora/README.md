@@ -9,8 +9,8 @@ You can use this image as a base container to run systemd services inside.
 
 Run the container as a daemon
 
-`docker run -d --cap-add SYS_ADMIN -v /sys/fs/cgroup:/sys/fs/cgroup:ro jrei/systemd-fedora`
+`docker run -d --privileged systemd-fedora -v /sys/fs/cgroup:/sys/fs/cgroup:ro jrei/systemd-fedora`
 
 Enter to the container
 
-`docker exec -it $CONTAINER_ID bash`
+`docker exec -it systemd-fedora bash`
