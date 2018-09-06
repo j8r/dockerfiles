@@ -1,10 +1,8 @@
-FROM debian:8
+FROM debian:jessie-backports
 
 ENV container docker
 ENV LC_ALL C
 ENV DEBIAN_FRONTEND noninteractive
-
-RUN echo 'deb http://deb.debian.org/debian jessie-backports main' >> /etc/apt/sources.list
 
 RUN apt-get update \
     && apt-get install -y systemd \
