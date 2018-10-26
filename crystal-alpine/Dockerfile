@@ -14,7 +14,6 @@ RUN echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/community' >>/etc/apk/
         llvm-static \
         make \
         musl-dev \
-        openssl \
         openssl-dev \
         pcre-dev \
         readline-dev \
