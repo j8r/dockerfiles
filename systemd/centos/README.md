@@ -9,7 +9,7 @@ You can use this image as a base container to run systemd services inside.
 
 Run the container as a daemon
 
-`docker run -d --privileged --name systemd-centos -v /sys/fs/cgroup:/sys/fs/cgroup:ro jrei/systemd-centos:7`
+`docker run -d --privileged --name systemd-centos -v /sys/fs/cgroup:/sys/fs/cgroup:ro jrei/systemd-centos`
 
 Enter to the container
 
