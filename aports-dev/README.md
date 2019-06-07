@@ -4,13 +4,14 @@ Brings a ready-to-use development environment to compile Alpine Linux aports
 
 ## Usage
 
-To login as dev:
+To login to the container, we are in a cloned [aports](https://github.com/alpinelinux/aports) directory:
 
-`docker run --rm -it -v $PWD:/aports -w /aports jrei/aports-dev su dev`
+`docker run --rm -it -v $PWD:/aports -w /aports jrei/aports-dev sh`
 
-Compile an aport:
+Compile an aport as `dev`:
 
 ```sh
+su dev
 cd $repository/$package
 abuild -rP /tmp
 ```

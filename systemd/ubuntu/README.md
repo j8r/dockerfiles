@@ -10,8 +10,12 @@ You can use this image as a base container to run systemd services inside.
 
 Run the container as a daemon
 
-`docker run -d --privileged --name systemd-ubuntu -v /sys/fs/cgroup:/sys/fs/cgroup:ro jrei/systemd-ubuntu`
+`docker run -d --name systemd-ubuntu --cap-add SYS_ADMIN -v /sys/fs/cgroup:/sys/fs/cgroup:ro jrei/systemd-ubuntu`
 
 Enter to the container
 
 `docker exec -it systemd-ubuntu bash`
+
+Remove the container
+
+`docker rm -f systemd-ubuntu`
