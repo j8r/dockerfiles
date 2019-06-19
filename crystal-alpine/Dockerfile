@@ -18,7 +18,7 @@ RUN echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/main' >>/etc/apk/repos
         openssl-dev \
         pcre-dev \
         readline-dev \
-        shards@edge \
+        shards \
         yaml-dev \
         zlib-dev
 
