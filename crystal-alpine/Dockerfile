@@ -4,10 +4,10 @@ RUN echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/main' >>/etc/apk/repos
     && echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/community' >>/etc/apk/repositories \
     && apk add --update --no-cache --force-overwrite \
         crystal@edge \
+        g++ \
         gc-dev \
         libevent-dev \
         libevent-static \
-        libunwind-dev \
         libxml2-dev \
         llvm \
         llvm-dev \
