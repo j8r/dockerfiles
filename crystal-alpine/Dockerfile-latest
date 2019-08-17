@@ -9,16 +9,17 @@ RUN echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/main' >>/etc/apk/repos
         libevent-dev \
         libevent-static \
         libxml2-dev \
-        llvm5 \
-        llvm5-dev \
-        llvm5-libs \
-        llvm5-static \
+        llvm8@edge \
+        llvm8-dev@edge \
+        llvm8-libs@edge \
+        llvm8-static@edge \
         make \
-        musl-dev \
+        musl@edge \
+        musl-dev@edge \
+        musl-utils@edge \
         openssl-dev \
         pcre-dev \
         readline-dev \
         shards \
         yaml-dev \
         zlib-dev
-

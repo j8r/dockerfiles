@@ -2,6 +2,15 @@
 
 Image with Crystal installed and its dependencies to build statically linked Crystal applications.
 
+## Supported tags
+
+Crystal version / Alpine version
+
+ - `latest`, `edge`
+ - `0.29.0`, `v3.10`
+ - `0.27.0`, `v3.9`
+ - `0.25.0`, `v3.8`
+
 ## Usage
 
 Add this hack to your main application file to link statically
