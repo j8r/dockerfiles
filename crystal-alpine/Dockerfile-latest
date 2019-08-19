@@ -1,25 +1,24 @@
-FROM alpine:3.9
+FROM alpine:edge
 
-RUN echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/main' >>/etc/apk/repositories \
-    && echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/community' >>/etc/apk/repositories \
+RUN echo '@v3.9 http://dl-cdn.alpinelinux.org/alpine/v3.9/community' >>/etc/apk/repositories \
     && apk add --update --no-cache --force-overwrite \
-        crystal@edge \
+        crystal \
         g++ \
         gc-dev \
         libevent-dev \
         libevent-static \
         libxml2-dev \
-        llvm8@edge \
-        llvm8-dev@edge \
-        llvm8-libs@edge \
-        llvm8-static@edge \
+        llvm8 \
+        llvm8-dev \
+        llvm8-libs \
+        llvm8-static \
         make \
-        musl@edge \
-        musl-dev@edge \
-        musl-utils@edge \
+        musl \
+        musl-dev \
+        musl-utils \
         openssl-dev \
         pcre-dev \
         readline-dev \
-        shards \
+        shards@v3.9 \
         yaml-dev \
         zlib-dev
