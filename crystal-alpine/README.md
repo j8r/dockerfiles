@@ -15,7 +15,13 @@ Crystal version / Alpine version
 
 Add this hack to your main application file to link statically
 
-`echo 'require "llvm/lib_llvm" require "llvm/enums"' >> src/app.cr`
+```sh
+echo '# for Alpine compilation
+{% if flag?(:static) %}
+  require "llvm/lib_llvm"
+  require "llvm/enums"
+{% end %}' >> src/app.cr
+```
 
 To compile an application which is assumed to be`src/app.cr`:
 
