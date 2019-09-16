@@ -1,7 +1,7 @@
 FROM alpine:edge
 
 RUN echo '@v3.9 http://dl-cdn.alpinelinux.org/alpine/v3.9/community' >>/etc/apk/repositories \
-    && apk add --update --no-cache --force-overwrite \
+    && apk add --update --upgrade --no-cache --force-overwrite \
         crystal \
         g++ \
         gc-dev \

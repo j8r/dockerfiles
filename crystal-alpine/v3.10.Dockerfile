@@ -1,6 +1,6 @@
 FROM alpine:3.10
 
-RUN apk add --update --no-cache --force-overwrite \
+RUN apk add --update --upgrade --no-cache --force-overwrite \
         crystal \
         g++ \
         gc-dev \
