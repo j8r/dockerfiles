@@ -17,8 +17,10 @@ RUN echo '@v3.9 http://dl-cdn.alpinelinux.org/alpine/v3.9/community' >>/etc/apk/
         musl-dev \
         musl-utils \
         openssl-dev \
+        openssl-libs-static \
         pcre-dev \
         readline-dev \
         shards@v3.9 \
         yaml-dev \
-        zlib-dev
+        zlib-dev \
+        zlib-static

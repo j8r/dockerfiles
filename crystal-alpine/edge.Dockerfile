@@ -14,8 +14,10 @@ RUN apk add --update --upgrade --no-cache --force-overwrite \
         make \
         musl-dev \
         openssl-dev \
+        openssl-libs-static \
         pcre-dev \
         readline-dev \
         shards \
         yaml-dev \
-        zlib-dev
+        zlib-dev \
+        zlib-static
