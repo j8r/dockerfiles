@@ -10,6 +10,6 @@ Upload static HTML site to a `gh-pages` branch, typically used in a CI.
 |SSH_PRIVATE_KEY|**mandatory**|
 |SITE_TEMP_DIR|"/tmp/site"|
 |GIT_COMMIT_MESSAGE|Update site|
-|GIT_USER|"CI"|
 |GIT_MAIL|""|
+|GIT_USER|"CI"|
 |||

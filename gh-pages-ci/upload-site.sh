@@ -1,8 +1,9 @@
 #!/bin/sh -eu
 
-: ${DOCS_TEMP_DIR:=/tmp/site}
-: ${GIT_USER:=CI}
-: ${GIT_MAIL:=}
+: ${SITE_TEMP_DIR=/tmp/site}
+: ${GIT_COMMIT_MESSAGE=Update site}
+: ${GIT_MAIL=}
+: ${GIT_USER=CI}
 
 mkdir -p ~/.ssh
 echo "$SSH_PRIVATE_KEY" >> ~/.ssh/id
@@ -14,9 +15,9 @@ git config --global user.email "$GIT_MAIL"
 git checkout -f --orphan gh-pages
 git rm --cached -rfq .
 git clean -fxdq
-mv $DOCS_TEMP_DIR/* .
+mv $SITE_TEMP_DIR/* .
 git add .
-git commit -qm "Update site"
+git commit -qm "$GIT_COMMIT_MESSAGE"
 
 remote=$(git remote -v)
 remote=${remote##*//}
