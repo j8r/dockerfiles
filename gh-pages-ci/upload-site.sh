@@ -1,6 +1,6 @@
 #!/bin/sh -eu
 
-: ${DOCS_TEMP_DIR:=/tmp/docs}
+: ${DOCS_TEMP_DIR:=/tmp/site}
 : ${GIT_USER:=CI}
 : ${GIT_MAIL:=}
 
@@ -16,7 +16,7 @@ git rm --cached -rfq .
 git clean -fxdq
 mv $DOCS_TEMP_DIR/* .
 git add .
-git commit -qm "Update docs"
+git commit -qm "Update site"
 
 remote=$(git remote -v)
 remote=${remote##*//}
