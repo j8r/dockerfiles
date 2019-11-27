@@ -20,4 +20,5 @@ RUN apk add --update --upgrade --no-cache --force-overwrite \
         shards \
         yaml-dev \
         zlib-dev \
-        zlib-static
+        zlib-static \
+        xz-dev

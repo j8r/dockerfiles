@@ -27,4 +27,5 @@ RUN apk add --update --upgrade --no-cache --force-overwrite \
         readline-dev \
         yaml-dev \
         zlib-dev \
-        zlib-static
+        zlib-static \
+        xz-dev
