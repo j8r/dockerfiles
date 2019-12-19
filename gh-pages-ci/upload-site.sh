@@ -4,13 +4,15 @@
 : ${GIT_COMMIT_MESSAGE=Update site}
 : ${GIT_MAIL=}
 : ${GIT_USER=CI}
+export GIT_AUTHOR_EMAIL=$GIT_MAIL
+export GIT_COMMITTER_EMAIL=$GIT_MAIL
+export GIT_AUTHOR_NAME=$GIT_USER
+export GIT_COMMITTER_NAME=$GIT_USER
 
 mkdir -p ~/.ssh
 echo "$SSH_PRIVATE_KEY" >> ~/.ssh/id
 chmod 400 ~/.ssh/id
 git config core.sshCommand "ssh -i ~/.ssh/id"
-git config --global user.name "$GIT_USER"
-git config --global user.email "$GIT_MAIL"
 
 git checkout -f --orphan gh-pages
 git rm --cached -rfq .
