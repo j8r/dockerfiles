@@ -13,10 +13,10 @@ RUN apk add --update --upgrade --no-cache --force-overwrite \
         libevent-dev \
         libevent-static \
         libxml2-dev \
-        llvm9 \
-        llvm9-dev \
-        llvm9-libs \
-        llvm9-static \
+        llvm5 \
+        llvm5-dev \
+        llvm5-libs \
+        llvm5-static \
         make \
         musl \
         musl-dev \
@@ -29,3 +29,5 @@ RUN apk add --update --upgrade --no-cache --force-overwrite \
         zlib-dev \
         zlib-static \
         xz-dev
+
+ENV LLVM_CONFIG=llvm5-config
