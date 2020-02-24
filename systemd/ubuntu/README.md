@@ -3,7 +3,8 @@
 You can use this image as a base container to run systemd services inside.
 
 ## Supported tags
- - `latest`, `18.04`
+ - `20.04`
+ - `18.04`, `latest`
  - `16.04`
 
 ## Usage
