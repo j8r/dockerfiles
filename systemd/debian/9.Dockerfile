@@ -1,4 +1,4 @@
-FROM debian:stretch-backports
+FROM debian:stretch
 
 ENV container docker
 ENV LC_ALL C

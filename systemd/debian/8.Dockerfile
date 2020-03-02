@@ -1,4 +1,4 @@
-FROM debian:jessie-backports
+FROM debian:jessie
 
 ENV container docker
 ENV LC_ALL C
