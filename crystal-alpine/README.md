@@ -7,6 +7,7 @@ Image with Crystal installed and its dependencies to build statically linked Cry
 Crystal version / Alpine version
 
  - `latest`, `edge`
+ - `0.33.0`, `v3.11`
  - `0.31.1`, `v3.11`
  - `0.29.0`, `v3.10`
  - `0.27.0`, `v3.9`
