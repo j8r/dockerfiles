@@ -4,12 +4,12 @@ Upload static HTML site to a `gh-pages` branch, typically used in a CI.
 
 ## Environment variables
 
-| | |
+|||
 |-|-|
 |Environment variable|Default value|
 |SSH_PRIVATE_KEY|**mandatory**|
+|BRANCH|gh-pages|
 |SITE_TEMP_DIR|"/tmp/site"|
 |GIT_COMMIT_MESSAGE|Update site|
 |GIT_MAIL|""|
 |GIT_USER|"CI"|
-|||

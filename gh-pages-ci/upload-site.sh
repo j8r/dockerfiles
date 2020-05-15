@@ -1,6 +1,7 @@
 #!/bin/sh -eu
 
 : ${SITE_TEMP_DIR=/tmp/site}
+: ${BRANCH=gh-pages}
 : ${GIT_COMMIT_MESSAGE=Update site}
 : ${GIT_MAIL=}
 : ${GIT_USER=CI}
@@ -14,7 +15,7 @@ echo "$SSH_PRIVATE_KEY" >> ~/.ssh/id
 chmod 400 ~/.ssh/id
 git config core.sshCommand "ssh -i ~/.ssh/id"
 
-git checkout -f --orphan gh-pages
+git checkout -f --orphan $BRANCH
 git rm --cached -rfq .
 git clean -fxdq
 mv $SITE_TEMP_DIR/* .
@@ -30,4 +31,4 @@ git_remote_path=${remote#$git_remote_host/*}
 ssh-keyscan "$git_remote_host" >> ~/.ssh/known_hosts
 git remote set-url origin "git@$git_remote_host:$git_remote_path"
 
-git push -f --set-upstream origin gh-pages
+git push -f --set-upstream origin $BRANCH
