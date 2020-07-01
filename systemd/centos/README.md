@@ -7,14 +7,18 @@ You can use this image as a base container to run systemd services inside.
 
 ## Usage
 
-Run the container as a daemon
+1. Run the container as a daemon
+
+`docker run -d --name systemd-centos --tmpfs /tmp --tmpfs /run --tmpfs /run/lock -v /sys/fs/cgroup:/sys/fs/cgroup:ro jrei/systemd-centos`
+
+or if it doesn't work
 
 `docker run -d --name systemd-centos --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro jrei/systemd-centos`
 
-Enter to the container
+2. Enter to the container
 
-`docker exec -it systemd-centos bash`
+`docker exec -it systemd-centos sh`
 
-Remove the container
+3. Remove the container
 
 `docker rm -f systemd-centos`
