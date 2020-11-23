@@ -2,6 +2,8 @@
 
 [![ISC](https://img.shields.io/badge/License-ISC-blue.svg?style=flat-square)](https://en.wikipedia.org/wiki/ISC_license)
 
+Image builds are triggered automatically each month.
+
 ## Directory structure
 
 - [aports-dev](./aports-dev) contains an image for Alpine Linux aports development.
