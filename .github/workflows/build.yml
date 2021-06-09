@@ -19,22 +19,22 @@ jobs:
               linux/arm/v7
               linux/arm64
             tags: |-
-              rnsc/systemd-centos:7
+              jrei/systemd-centos:7
           - name: systemd-centos-8
             dockerfile: systemd/centos/8.Dockerfile
             platforms: |-
               linux/amd64
               linux/arm64
             tags: |-
-              rnsc/systemd-centos:8
-              rnsc/systemd-centos:latest
+              jrei/systemd-centos:8
+              jrei/systemd-centos:latest
           - name: systemd-debian-8
             dockerfile: systemd/debian/8.Dockerfile
             platforms: |-
               linux/amd64
             tags: |-
-              rnsc/systemd-debian:8
-              rnsc/systemd-debian:jessie
+              jrei/systemd-debian:8
+              jrei/systemd-debian:jessie
           - name: systemd-debian-9
             dockerfile: systemd/debian/9.Dockerfile
             platforms: |-
@@ -42,8 +42,8 @@ jobs:
               linux/arm/v7
               linux/arm64
             tags: |-
-              rnsc/systemd-debian:9
-              rnsc/systemd-debian:stretch
+              jrei/systemd-debian:9
+              jrei/systemd-debian:stretch
           - name: systemd-debian-10
             dockerfile: systemd/debian/10.Dockerfile
             platforms: |-
@@ -51,9 +51,9 @@ jobs:
               linux/arm/v7
               linux/arm64
             tags: |-
-              rnsc/systemd-debian:10
-              rnsc/systemd-debian:buster
-              rnsc/systemd-debian:latest
+              jrei/systemd-debian:10
+              jrei/systemd-debian:buster
+              jrei/systemd-debian:latest
           - name: systemd-debian-11
             dockerfile: systemd/debian/11.Dockerfile
             platforms: |-
@@ -61,8 +61,8 @@ jobs:
               linux/arm/v7
               linux/arm64
             tags: |-
-              rnsc/systemd-debian:11
-              rnsc/systemd-debian:bullseye
+              jrei/systemd-debian:11
+              jrei/systemd-debian:bullseye
           - name: systemd-debian-sid
             dockerfile: systemd/debian/sid.Dockerfile
             platforms: |-
@@ -70,7 +70,7 @@ jobs:
               linux/arm/v7
               linux/arm64
             tags: |-
-              rnsc/systemd-debian:sid
+              jrei/systemd-debian:sid
           - name: systemd-fedora-latest
             dockerfile: systemd/fedora/Dockerfile
             platforms: |-
@@ -78,7 +78,7 @@ jobs:
               linux/arm/v7
               linux/arm64
             tags: |-
-              rnsc/systemd-fedora:latest
+              jrei/systemd-fedora:latest
           - name: systemd-ubuntu-16.04
             dockerfile: systemd/ubuntu/16.04.Dockerfile
             platforms: |-
@@ -86,8 +86,8 @@ jobs:
               linux/arm/v7
               linux/arm64
             tags: |-
-              rnsc/systemd-ubuntu:16.04
-              rnsc/systemd-ubuntu:xenial
+              jrei/systemd-ubuntu:16.04
+              jrei/systemd-ubuntu:xenial
           - name: systemd-ubuntu-18.04
             dockerfile: systemd/ubuntu/18.04.Dockerfile
             platforms: |-
@@ -95,8 +95,8 @@ jobs:
               linux/arm/v7
               linux/arm64
             tags: |-
-              rnsc/systemd-ubuntu:18.04
-              rnsc/systemd-ubuntu:bionic
+              jrei/systemd-ubuntu:18.04
+              jrei/systemd-ubuntu:bionic
           - name: systemd-ubuntu-20.04
             dockerfile: systemd/ubuntu/20.04.Dockerfile
             platforms: |-
@@ -104,9 +104,9 @@ jobs:
               linux/arm/v7
               linux/arm64
             tags: |-
-              rnsc/systemd-ubuntu:20.04
-              rnsc/systemd-ubuntu:focal
-              rnsc/systemd-ubuntu:latest
+              jrei/systemd-ubuntu:20.04
+              jrei/systemd-ubuntu:focal
+              jrei/systemd-ubuntu:latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
