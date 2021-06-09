@@ -1,19 +1,33 @@
-name: Debian images build
+name: Docker images build
 
 on:
   push:
     branches: ['*']
-    paths:
-      - systemd/debian/*
   schedule:
     - cron: '0 0 1 * *'
-
+    
 jobs:
   docker:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         include:
+          - name: systemd-centos-7
+            dockerfile: systemd/centos/7.Dockerfile
+            platforms: |-
+              linux/amd64
+              linux/arm/v7
+              linux/arm64
+            tags: |-
+              rnsc/systemd-centos:7
+          - name: systemd-centos-8
+            dockerfile: systemd/centos/8.Dockerfile
+            platforms: |-
+              linux/amd64
+              linux/arm64
+            tags: |-
+              rnsc/systemd-centos:8
+              rnsc/systemd-centos:latest
           - name: systemd-debian-8
             dockerfile: systemd/debian/8.Dockerfile
             platforms: |-
@@ -57,6 +71,42 @@ jobs:
               linux/arm64
             tags: |-
               rnsc/systemd-debian:sid
+          - name: systemd-fedora-latest
+            dockerfile: systemd/fedora/Dockerfile
+            platforms: |-
+              linux/amd64
+              linux/arm/v7
+              linux/arm64
+            tags: |-
+              rnsc/systemd-fedora:latest
+          - name: systemd-ubuntu-16.04
+            dockerfile: systemd/ubuntu/16.04.Dockerfile
+            platforms: |-
+              linux/amd64
+              linux/arm/v7
+              linux/arm64
+            tags: |-
+              rnsc/systemd-ubuntu:16.04
+              rnsc/systemd-ubuntu:xenial
+          - name: systemd-ubuntu-18.04
+            dockerfile: systemd/ubuntu/18.04.Dockerfile
+            platforms: |-
+              linux/amd64
+              linux/arm/v7
+              linux/arm64
+            tags: |-
+              rnsc/systemd-ubuntu:18.04
+              rnsc/systemd-ubuntu:bionic
+          - name: systemd-ubuntu-20.04
+            dockerfile: systemd/ubuntu/20.04.Dockerfile
+            platforms: |-
+              linux/amd64
+              linux/arm/v7
+              linux/arm64
+            tags: |-
+              rnsc/systemd-ubuntu:20.04
+              rnsc/systemd-ubuntu:focal
+              rnsc/systemd-ubuntu:latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
