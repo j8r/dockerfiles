@@ -14,4 +14,4 @@ Image builds are triggered automatically each month.
 
 ## License
 
-Copyright (c) 2018-2020 Julien Reichardt - ISC License
+Copyright (c) 2018-2021 Julien Reichardt - ISC License
