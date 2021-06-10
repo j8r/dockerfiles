@@ -12,6 +12,18 @@ jobs:
     strategy:
       matrix:
         include:
+          - name: openrc-alpine
+            dockerfile: openrc/alpine/Dockerfile
+            platforms: |-
+              linux/amd64
+            tags: |-
+              jrei/alpine-openrc:latest
+          - name: aports-dev
+            dockerfile: aports-dev/Dockerfile
+            platforms: |-
+              linux/amd64
+            tags: |-
+              jrei/aports-dev:latest
           - name: systemd-centos-7
             dockerfile: systemd/centos/7.Dockerfile
             platforms: |-
