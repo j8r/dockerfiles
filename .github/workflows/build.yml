@@ -120,7 +120,7 @@ jobs:
       - name: Login to DockerHub
         uses: docker/login-action@v1 
         with:
-          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          username: jrei
           password: ${{ secrets.DOCKER_HUB_TOKEN }}
 
       - name: Build and push ${{ matrix.name }}
