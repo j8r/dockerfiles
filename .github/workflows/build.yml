@@ -65,7 +65,6 @@ jobs:
             tags: |-
               jrei/systemd-debian:10
               jrei/systemd-debian:buster
-              jrei/systemd-debian:latest
           - name: systemd-debian-11
             dockerfile: systemd/debian/11.Dockerfile
             platforms: |-
@@ -75,6 +74,7 @@ jobs:
             tags: |-
               jrei/systemd-debian:11
               jrei/systemd-debian:bullseye
+              jrei/systemd-debian:latest
           - name: systemd-debian-sid
             dockerfile: systemd/debian/sid.Dockerfile
             platforms: |-
