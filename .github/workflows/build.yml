@@ -17,7 +17,7 @@ jobs:
             platforms: |-
               linux/amd64
             tags: |-
-              jrei/alpine-openrc:latest
+              jrei/openrc-alpine:latest
           - name: aports-dev
             dockerfile: aports-dev/Dockerfile
             platforms: |-
