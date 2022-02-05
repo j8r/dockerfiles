@@ -4,6 +4,7 @@ You can use this image as a base container to run systemd services inside.
 
 ## Supported tags
  - `sid`
+ - `12`
  - `11`, `latest`
  - `10`
  - `9`
