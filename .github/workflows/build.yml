@@ -4,7 +4,7 @@ on:
   push:
     branches: ['*']
   schedule:
-    - cron: '0 0 1 * *'
+    - cron: '30 0 1 * *'
 
 jobs:
   docker:
@@ -96,7 +96,6 @@ jobs:
             dockerfile: systemd/fedora/Dockerfile
             platforms: |-
               linux/amd64
-              linux/arm/v7
               linux/arm64
             tags: |-
               jrei/systemd-fedora:latest
