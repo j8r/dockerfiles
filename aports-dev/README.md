@@ -4,7 +4,7 @@ Brings a ready-to-use development environment to compile Alpine Linux aports
 
 ## Usage
 
-To login to the container, we are in a cloned [aports](https://github.com/alpinelinux/aports) directory:
+Clone [aports](https://github.com/alpinelinux/aports), then inside the cloned project:
 
 `docker run --rm -it -v $PWD:/aports -w /aports jrei/aports-dev`
 
