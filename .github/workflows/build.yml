@@ -40,15 +40,6 @@ jobs:
             tags: |-
               jrei/systemd-centos:8
               jrei/systemd-centos:latest
-          - name: systemd-debian-9
-            dockerfile: systemd/debian/9.Dockerfile
-            platforms: |-
-              linux/amd64
-              linux/arm/v7
-              linux/arm64
-            tags: |-
-              jrei/systemd-debian:9
-              jrei/systemd-debian:stretch
           - name: systemd-debian-10
             dockerfile: systemd/debian/10.Dockerfile
             platforms: |-
