@@ -120,6 +120,15 @@ jobs:
             tags: |-
               jrei/systemd-ubuntu:22.04
               jrei/systemd-ubuntu:jammy
+          - name: systemd-ubuntu-24.04
+            dockerfile: systemd/ubuntu/24.04.Dockerfile
+            platforms: |-
+              linux/amd64
+              linux/arm/v7
+              linux/arm64
+            tags: |-
+              jrei/systemd-ubuntu:24.04
+              jrei/systemd-ubuntu:noble
     steps:
       - name: Checkout
         uses: actions/checkout@v3
