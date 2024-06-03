@@ -110,7 +110,6 @@ jobs:
             tags: |-
               jrei/systemd-ubuntu:20.04
               jrei/systemd-ubuntu:focal
-              jrei/systemd-ubuntu:latest
           - name: systemd-ubuntu-22.04
             dockerfile: systemd/ubuntu/22.04.Dockerfile
             platforms: |-
@@ -129,6 +128,7 @@ jobs:
             tags: |-
               jrei/systemd-ubuntu:24.04
               jrei/systemd-ubuntu:noble
+              jrei/systemd-ubuntu:latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
