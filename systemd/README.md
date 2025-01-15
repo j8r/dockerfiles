@@ -21,7 +21,7 @@ Exiting PID 1...
 Try:
 
 ```
- docker run -d --tmpfs /tmp --tmpfs /run --tmpfs /run/lock -v /sys/fs/cgroup:/sys/fs/cgroup --cgroupns=host  --cap-add SYS_ADMIN  -t jrei/$IMAGE
+ docker run -d --name systemd --tmpfs /tmp --tmpfs /run --tmpfs /run/lock -v /sys/fs/cgroup:/sys/fs/cgroup --cgroupns=host  --cap-add SYS_ADMIN  -t jrei/$IMAGE
 ```
 
 See [this discussion](https://github.com/moby/moby/issues/42275) for background.
