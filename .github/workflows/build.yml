@@ -58,7 +58,6 @@ jobs:
             tags: |-
               jrei/systemd-debian:11
               jrei/systemd-debian:bullseye
-              jrei/systemd-debian:latest
           - name: systemd-debian-12
             dockerfile: systemd/debian/12.Dockerfile
             platforms: |-
@@ -68,6 +67,16 @@ jobs:
             tags: |-
               jrei/systemd-debian:12
               jrei/systemd-debian:bookworm
+              jrei/systemd-debian:latest
+          - name: systemd-debian-13
+            dockerfile: systemd/debian/13.Dockerfile
+            platforms: |-
+              linux/amd64
+              linux/arm/v7
+              linux/arm64
+            tags: |-
+              jrei/systemd-debian:13
+              jrei/systemd-debian:trixie
           - name: systemd-debian-sid
             dockerfile: systemd/debian/sid.Dockerfile
             platforms: |-

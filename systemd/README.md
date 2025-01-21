@@ -8,9 +8,23 @@ You can use this images as base containers to run systemd services inside.
 
 `docker run -d --name systemd --tmpfs /tmp --tmpfs /run --tmpfs /run/lock -v /sys/fs/cgroup:/sys/fs/cgroup:ro jrei/$IMAGE`
 
-or if it doesn't work
+If you have issues starting the container, such as:
 
-`docker run -d --name systemd --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro jrei/$IMAGE`
+```
+Failed to mount tmpfs at /run: Operation not permitted
+Failed to mount tmpfs at /run/lock: Operation not permitted
+Failed to mount cgroup at /sys/fs/cgroup/systemd: Operation not permitted
+[!!!!!!] Failed to mount API filesystems.
+Exiting PID 1...
+```
+
+Try:
+
+```
+ docker run -d --name systemd --tmpfs /tmp --tmpfs /run --tmpfs /run/lock -v /sys/fs/cgroup:/sys/fs/cgroup --cgroupns=host  --cap-add SYS_ADMIN  -t jrei/$IMAGE
+```
+
+See [this discussion](https://github.com/moby/moby/issues/42275) for background.
 
 2. Enter to the container
 
