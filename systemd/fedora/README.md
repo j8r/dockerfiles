@@ -1,9 +1,11 @@
-# Fedora latest stable image with systemd enabled
+# Fedora image with systemd enabled
 
 You can use this image as a base container to run systemd services inside.
 
 ## Supported tags
  - `latest`
+ - `42`
+ - `41`
 
 ## Usage
 

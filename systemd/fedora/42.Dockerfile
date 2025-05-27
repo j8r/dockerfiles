@@ -1,4 +1,4 @@
-FROM fedora:latest
+FROM fedora:42
 
 ENV container docker
 
