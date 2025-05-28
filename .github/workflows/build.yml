@@ -85,6 +85,13 @@ jobs:
               linux/arm64
             tags: |-
               jrei/systemd-debian:sid
+          - name: systemd-fedora-latest
+            dockerfile: systemd/fedora/Dockerfile
+            platforms: |-
+              linux/amd64
+              linux/arm64
+            tags: |-
+              jrei/systemd-fedora:latest
           - name: systemd-fedora-41
             dockerfile: systemd/fedora/41.Dockerfile
             platforms: |-
