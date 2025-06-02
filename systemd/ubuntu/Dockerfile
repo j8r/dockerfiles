@@ -1,8 +1,9 @@
-FROM debian:bullseye
+ARG VERSION
 
-ENV container docker
-ENV LC_ALL C
-ENV DEBIAN_FRONTEND noninteractive
+FROM ubuntu:${VERSION}
+
+ENV LC_ALL=C
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update \
     && apt-get install -y systemd systemd-sysv \
