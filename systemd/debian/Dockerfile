@@ -1,8 +1,9 @@
-FROM ubuntu:16.04
+ARG VERSION
 
-ENV container docker
-ENV LC_ALL C
-ENV DEBIAN_FRONTEND noninteractive
+FROM debian:${VERSION}
+
+ENV LC_ALL=C
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update \
     && apt-get install -y systemd systemd-sysv \

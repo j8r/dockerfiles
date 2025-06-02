@@ -12,152 +12,102 @@ jobs:
     strategy:
       matrix:
         include:
-          - name: openrc-alpine
-            dockerfile: openrc/alpine/Dockerfile
+          - path: openrc/alpine
             platforms: |-
               linux/amd64
             tags: |-
               jrei/openrc-alpine:latest
-          - name: aports-dev
-            dockerfile: aports-dev/Dockerfile
+          - path: aports-dev
             platforms: |-
               linux/amd64
             tags: |-
               jrei/aports-dev:latest
-          - name: systemd-centos-7
-            dockerfile: systemd/centos/7.Dockerfile
-            platforms: |-
-              linux/amd64
-              linux/arm/v7
-              linux/arm64
+          - path: systemd/centos
+            version: "7"
             tags: |-
               jrei/systemd-centos:7
-          - name: systemd-centos-8
-            dockerfile: systemd/centos/8.Dockerfile
+          - path: systemd/centos
+            version: "8"
             platforms: |-
               linux/amd64
               linux/arm64
             tags: |-
               jrei/systemd-centos:8
               jrei/systemd-centos:latest
-          - name: systemd-debian-10
-            dockerfile: systemd/debian/10.Dockerfile
-            platforms: |-
-              linux/amd64
-              linux/arm/v7
-              linux/arm64
+          - path: systemd/debian
+            version: "10"
             tags: |-
               jrei/systemd-debian:10
               jrei/systemd-debian:buster
-          - name: systemd-debian-11
-            dockerfile: systemd/debian/11.Dockerfile
-            platforms: |-
-              linux/amd64
-              linux/arm/v7
-              linux/arm64
+          - path: systemd/debian
+            version: "11"
             tags: |-
               jrei/systemd-debian:11
               jrei/systemd-debian:bullseye
-          - name: systemd-debian-12
-            dockerfile: systemd/debian/12.Dockerfile
-            platforms: |-
-              linux/amd64
-              linux/arm/v7
-              linux/arm64
+          - path: systemd/debian
+            version: "12"
             tags: |-
               jrei/systemd-debian:12
               jrei/systemd-debian:bookworm
               jrei/systemd-debian:latest
-          - name: systemd-debian-13
-            dockerfile: systemd/debian/13.Dockerfile
-            platforms: |-
-              linux/amd64
-              linux/arm/v7
-              linux/arm64
+          - path: systemd/debian
+            version: "trixie"
             tags: |-
               jrei/systemd-debian:13
               jrei/systemd-debian:trixie
-          - name: systemd-debian-sid
-            dockerfile: systemd/debian/sid.Dockerfile
-            platforms: |-
-              linux/amd64
-              linux/arm/v7
-              linux/arm64
+          - path: systemd/debian
+            version: "sid"
             tags: |-
               jrei/systemd-debian:sid
-          - name: systemd-fedora-latest
-            dockerfile: systemd/fedora/Dockerfile
+          - path: systemd/fedora
+            version: "latest"
             platforms: |-
               linux/amd64
               linux/arm64
             tags: |-
               jrei/systemd-fedora:latest
-          - name: systemd-fedora-41
-            dockerfile: systemd/fedora/41.Dockerfile
+          - path: systemd/fedora
+            version: "41"
             platforms: |-
               linux/amd64
               linux/arm64
             tags: |-
               jrei/systemd-fedora:41
-          - name: systemd-fedora-42
-            dockerfile: systemd/fedora/42.Dockerfile
+          - path: systemd/fedora
+            version: "42"
             platforms: |-
               linux/amd64
               linux/arm64
             tags: |-
               jrei/systemd-fedora:42
               jrei/systemd-fedora:latest
-          - name: systemd-ubuntu-16.04
-            dockerfile: systemd/ubuntu/16.04.Dockerfile
-            platforms: |-
-              linux/amd64
-              linux/arm/v7
-              linux/arm64
+          - path: systemd/ubuntu
+            version: "16.04"
             tags: |-
               jrei/systemd-ubuntu:16.04
               jrei/systemd-ubuntu:xenial
-          - name: systemd-ubuntu-18.04
-            dockerfile: systemd/ubuntu/18.04.Dockerfile
-            platforms: |-
-              linux/amd64
-              linux/arm/v7
-              linux/arm64
+          - path: systemd/ubuntu
+            version: "18.04"
             tags: |-
               jrei/systemd-ubuntu:18.04
               jrei/systemd-ubuntu:bionic
-          - name: systemd-ubuntu-20.04
-            dockerfile: systemd/ubuntu/20.04.Dockerfile
-            platforms: |-
-              linux/amd64
-              linux/arm/v7
-              linux/arm64
+          - path: systemd/ubuntu
+            version: "20.04"
             tags: |-
               jrei/systemd-ubuntu:20.04
               jrei/systemd-ubuntu:focal
-          - name: systemd-ubuntu-22.04
-            dockerfile: systemd/ubuntu/22.04.Dockerfile
-            platforms: |-
-              linux/amd64
-              linux/arm/v7
-              linux/arm64
+          - path: systemd/ubuntu
+            version: "22.04"
             tags: |-
               jrei/systemd-ubuntu:22.04
               jrei/systemd-ubuntu:jammy
-          - name: systemd-ubuntu-24.04
-            dockerfile: systemd/ubuntu/24.04.Dockerfile
-            platforms: |-
-              linux/amd64
-              linux/arm/v7
-              linux/arm64
+          - path: systemd/ubuntu
+            version: "24.04"
             tags: |-
               jrei/systemd-ubuntu:24.04
               jrei/systemd-ubuntu:noble
-          - name: systemd-ubuntu-25.04
-            dockerfile: systemd/ubuntu/25.04.Dockerfile
-            platforms: |-
-              linux/amd64
-              linux/arm/v7
-              linux/arm64
+          - path: systemd/ubuntu
+            version: "25.04"
             tags: |-
               jrei/systemd-ubuntu:25.04
               jrei/systemd-ubuntu:plucky
@@ -179,12 +129,13 @@ jobs:
           username: jrei
           password: ${{ secrets.DOCKER_HUB_TOKEN }}
 
-      - name: Build and push ${{ matrix.name }}
-        uses: docker/build-push-action@v6
+      - name: Build and push ${{ matrix.name }} ${{ matrix.version }}
+        uses: docker/build-push-action@v3
         with:
           context: .
-          file: ${{ matrix.dockerfile }}
-          platforms: ${{ matrix.platforms }}
+          build-args: ${{ matrix.version && format('VERSION={0}', matrix.version) }}
+          file: ${{ matrix.path }}/Dockerfile
+          platforms: ${{ matrix.platforms || 'linux/amd64,linux/arm/v7,linux/arm64' }}
           push: true
           tags: ${{ matrix.tags }}
           labels: |

@@ -1,6 +1,6 @@
-FROM centos:7
+ARG VERSION
 
-ENV container docker
+FROM centos:${VERSION}
 
 RUN cd /lib/systemd/system/sysinit.target.wants/; \
     for i in *; do [ $i = systemd-tmpfiles-setup.service ] || rm -f $i; done

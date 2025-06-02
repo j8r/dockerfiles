@@ -1,6 +1,6 @@
-FROM fedora:latest
+ARG VERSION
 
-ENV container docker
+FROM fedora:${VERSION}
 
 RUN dnf -y update \
     && dnf -y install systemd \
