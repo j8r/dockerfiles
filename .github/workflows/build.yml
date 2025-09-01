@@ -44,12 +44,12 @@ jobs:
             tags: |-
               jrei/systemd-debian:12
               jrei/systemd-debian:bookworm
-              jrei/systemd-debian:latest
           - path: systemd/debian
-            version: "trixie"
+            version: "13"
             tags: |-
               jrei/systemd-debian:13
               jrei/systemd-debian:trixie
+              jrei/systemd-debian:latest
           - path: systemd/debian
             version: "sid"
             tags: |-
