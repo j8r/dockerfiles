@@ -35,11 +35,6 @@ jobs:
               jrei/systemd-centos:8
               jrei/systemd-centos:latest
           - path: systemd/debian
-            version: "10"
-            tags: |-
-              jrei/systemd-debian:10
-              jrei/systemd-debian:buster
-          - path: systemd/debian
             version: "11"
             tags: |-
               jrei/systemd-debian:11
