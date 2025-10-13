@@ -106,6 +106,15 @@ jobs:
             tags: |-
               jrei/systemd-ubuntu:25.04
               jrei/systemd-ubuntu:plucky
+          - name: systemd-ubuntu-25.10
+            dockerfile: systemd/ubuntu/25.10.Dockerfile
+            platforms: |-
+              linux/amd64
+              linux/arm/v7
+              linux/arm64
+            tags: |-
+              jrei/systemd-ubuntu:25.10
+              jrei/systemd-ubuntu:questing
               jrei/systemd-ubuntu:latest
 
     steps:
