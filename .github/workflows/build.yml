@@ -75,6 +75,13 @@ jobs:
               linux/arm64
             tags: |-
               jrei/systemd-fedora:42
+          - path: systemd/fedora
+            version: "43"
+            platforms: |-
+              linux/amd64
+              linux/arm64
+            tags: |-
+              jrei/systemd-fedora:43
               jrei/systemd-fedora:latest
           - path: systemd/ubuntu
             version: "16.04"
