@@ -55,13 +55,6 @@ jobs:
             tags: |-
               jrei/systemd-debian:sid
           - path: systemd/fedora
-            version: "latest"
-            platforms: |-
-              linux/amd64
-              linux/arm64
-            tags: |-
-              jrei/systemd-fedora:latest
-          - path: systemd/fedora
             version: "41"
             platforms: |-
               linux/amd64
