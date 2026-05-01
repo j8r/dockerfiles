@@ -8,18 +8,19 @@ on:
 
 jobs:
   docker:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.platform.os }}
     strategy:
       matrix:
-        include:
+        platform:
+          - os: ubuntu-22.04-arm
+            arch: linux/arm64
+          - os: ubuntu-latest
+            arch: linux/amd64
+        image:
           - path: openrc/alpine
-            platforms: |-
-              linux/amd64
             tags: |-
               jrei/openrc-alpine:latest
           - path: aports-dev
-            platforms: |-
-              linux/amd64
             tags: |-
               jrei/aports-dev:latest
           - path: systemd/centos
@@ -95,12 +96,10 @@ jobs:
               jrei/systemd-ubuntu:26.04
               jrei/systemd-ubuntu:resolute
               jrei/systemd-ubuntu:latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v4
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v4
@@ -111,15 +110,15 @@ jobs:
           username: jrei
           password: ${{ secrets.DOCKER_HUB_TOKEN }}
 
-      - name: Build and push ${{ matrix.name }} ${{ matrix.version }}
+      - name: Build and push ${{ matrix.image.name }} ${{ matrix.image.version }}
         uses: docker/build-push-action@v7
         with:
           context: .
-          build-args: ${{ matrix.version && format('VERSION={0}', matrix.version) }}
-          file: ${{ matrix.path }}/Dockerfile
-          platforms: ${{ matrix.platforms || 'linux/amd64,linux/arm64' }}
+          build-args: ${{ matrix.image.version && format('VERSION={0}', matrix.image.version) }}
+          file: ${{ matrix.image.path }}/Dockerfile
+          platforms: ${{ matrix.platform.arch }}
           push: true
-          tags: ${{ matrix.tags }}
+          tags: ${{ matrix.image.tags }}
           labels: |
             maintainer=${{ github.repository_owner }}
             org.opencontainers.image.vendor=${{ github.repository_owner }}
