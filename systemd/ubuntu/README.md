@@ -8,8 +8,6 @@ You can use this image as a base container to run systemd services inside.
  - `24.04`
  - `22.04`
  - `20.04`
- - `18.04`
- - `16.04`
 
 ## Usage
 
