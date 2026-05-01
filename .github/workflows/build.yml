@@ -28,9 +28,6 @@ jobs:
               jrei/systemd-centos:7
           - path: systemd/centos
             version: "8"
-            platforms: |-
-              linux/amd64
-              linux/arm64
             tags: |-
               jrei/systemd-centos:8
               jrei/systemd-centos:latest
@@ -56,23 +53,14 @@ jobs:
               jrei/systemd-debian:sid
           - path: systemd/fedora
             version: "41"
-            platforms: |-
-              linux/amd64
-              linux/arm64
             tags: |-
               jrei/systemd-fedora:41
           - path: systemd/fedora
             version: "42"
-            platforms: |-
-              linux/amd64
-              linux/arm64
             tags: |-
               jrei/systemd-fedora:42
           - path: systemd/fedora
             version: "43"
-            platforms: |-
-              linux/amd64
-              linux/arm64
             tags: |-
               jrei/systemd-fedora:43
               jrei/systemd-fedora:latest
@@ -101,8 +89,12 @@ jobs:
             tags: |-
               jrei/systemd-ubuntu:25.10
               jrei/systemd-ubuntu:questing
+          - path: systemd/ubuntu
+            version: "26.04"
+            tags: |-
+              jrei/systemd-ubuntu:26.04
+              jrei/systemd-ubuntu:resolute
               jrei/systemd-ubuntu:latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -125,7 +117,7 @@ jobs:
           context: .
           build-args: ${{ matrix.version && format('VERSION={0}', matrix.version) }}
           file: ${{ matrix.path }}/Dockerfile
-          platforms: ${{ matrix.platforms || 'linux/amd64,linux/arm/v7,linux/arm64' }}
+          platforms: ${{ matrix.platforms || 'linux/amd64,linux/arm64' }}
           push: true
           tags: ${{ matrix.tags }}
           labels: |
