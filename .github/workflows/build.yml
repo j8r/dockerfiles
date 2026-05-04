@@ -66,11 +66,6 @@ jobs:
               jrei/systemd-fedora:43
               jrei/systemd-fedora:latest
           - path: systemd/ubuntu
-            version: "20.04"
-            tags: |-
-              jrei/systemd-ubuntu:20.04
-              jrei/systemd-ubuntu:focal
-          - path: systemd/ubuntu
             version: "22.04"
             tags: |-
               jrei/systemd-ubuntu:22.04
