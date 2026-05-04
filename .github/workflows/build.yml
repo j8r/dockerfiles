@@ -12,8 +12,8 @@ jobs:
     strategy:
       matrix:
         platform:
-          - os: ubuntu-22.04-arm
-            arch: linux/arm64
+          # - os: ubuntu-22.04-arm
+          #   arch: linux/arm64
           - os: ubuntu-latest
             arch: linux/amd64
         image:
