@@ -1,4 +1,4 @@
-ARG VERSION
+ARG VERSION=latest
 
 FROM fedora:${VERSION}
 
