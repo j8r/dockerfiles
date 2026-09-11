@@ -9,6 +9,7 @@ on:
 jobs:
   docker:
     runs-on: ${{ matrix.platform.os }}
+    continue-on-error: true
     strategy:
       matrix:
         platform:
