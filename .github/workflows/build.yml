@@ -76,16 +76,6 @@ jobs:
               jrei/systemd-ubuntu:24.04
               jrei/systemd-ubuntu:noble
           - path: systemd/ubuntu
-            version: "25.04"
-            tags: |-
-              jrei/systemd-ubuntu:25.04
-              jrei/systemd-ubuntu:plucky
-          - path: systemd/ubuntu
-            version: "25.10"
-            tags: |-
-              jrei/systemd-ubuntu:25.10
-              jrei/systemd-ubuntu:questing
-          - path: systemd/ubuntu
             version: "26.04"
             tags: |-
               jrei/systemd-ubuntu:26.04
