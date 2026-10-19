@@ -80,6 +80,11 @@ jobs:
             tags: |-
               jrei/systemd-ubuntu:26.04
               jrei/systemd-ubuntu:resolute
+          - path: systemd/ubuntu
+            version: "26.10"
+            tags: |-
+              jrei/systemd-ubuntu:26.10
+              jrei/systemd-ubuntu:stonking
               jrei/systemd-ubuntu:latest
 
     steps:
