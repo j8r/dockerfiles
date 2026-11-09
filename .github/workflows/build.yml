@@ -64,6 +64,10 @@ jobs:
             version: "44"
             tags: |-
               jrei/systemd-fedora:44
+          - path: systemd/fedora
+            version: "45"
+            tags: |-
+              jrei/systemd-fedora:45
               jrei/systemd-fedora:latest
           - path: systemd/ubuntu
             version: "22.04"
